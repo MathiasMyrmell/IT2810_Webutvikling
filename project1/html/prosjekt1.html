@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <title>Prosjekt 1</title>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    </head>
+    <body>
+    <div class="grid-container">
+        <div class="header">
+            <h1>
+                Prosjekt 1
+            </h1>
+        </div>
+        <div class="artistInfo">
+            <h2>Artist info</h2>
+            <p>
+                Helt ordinær student på et helt ordinært studie.<br/>
+                Tegneferdigheter til en femåring, men kanskje det da er bedre å gjøre det digitalt?<br/>
+                Versågod, og nyt mitt første forsøk på bruk av SVG og Canvas. Personlig syntes jeg det ble ganske ok :-)<br/>
+            </p>
+        </div>
+        <div class="picture" id="SVGPicture">
+            <h3>SVG</h3>
+            <svg width="500" height="500">
+                <!-- Bane -->
+                <polygon class="bane" points="60,80 280,190 280,230 60,120"/>
+                <polygon class="bane" points="340,170 340,350 100,400 60,400 60,380 58,380 58,440 100,440 380,440 380,170"/>
+                <!-- Ball -->
+                <circle id="ball" cx="80" cy="20" r="20" onclick="start()"/>
+                <!-- Figurer -->
+                <polygon class="trekant" points="100,440 70,470 130,470"/>
+                <polygon class="trekant" points="340,440 310,470 370,470"/>
+                <rect class="bakke" x="0" y="470" width="500" height="5"/>
+            </svg>
+            <script>
+                function start(){
+                    $( "#ball").animate(
+                        {
+                            cx:"80",
+                            cy:"20"
+                        },1
+                    )
+                    $( "#ball" ).animate(
+                        {
+                            cy:"67",
+                        },1000
+                    );
+                    $( "#ball" ).animate(
+                        {
+                            cx:"320",
+                            cy:"187"
+                        },1500
+                    );
+                    $( "#ball" ).animate(
+                        {
+                        cy:"333"
+
+                        },1000
+                    );
+                    $( "#ball" ).animate(
+                        {
+                        cx:"100",
+                        cy:"380"   
+    
+                        },2000
+                    );
+                    $( "#ball" ).animate(
+                        {
+                        cx:"80", 
+    
+                        },500
+                    );
+            }
+            </script>
+        </div>
+        <div class="picture" id="CanvasPicture">
+            <h3>
+                Canvas
+            </h3>
+            <canvas id="canvas" width="500" height="500" onClick="startAnimation()"></canvas>
+            <script type='text/javascript' src='http://code.jquery.com/jquery-2.0.2.js'>
+            </script>
+            <script type='text/javascript'>
+                var x = 80;
+                var y = 20;
+                var path;
+                var interval;
+                var trackColor = "#000";
+                window.onload = function() {
+                    canvas=document.getElementById("canvas");
+                    ctx=canvas.getContext("2d");
+                    drawTrack();
+                    drawFigures();
+                    drawBall();
+                }
+
+                function startAnimation(){
+                    x=80;
+                    y=20;
+                    path=1;
+                    clearInterval(interval);
+                    interval = setInterval(animation,10);
+                }
+
+                function animation(){
+                    ctx.clearRect(0,0,500, 500);
+                    drawTrack();
+                    drawFigures();
+                    drawBall();
+                    getPath();
+                }
+
+                function drawTrack(){
+                        //FirstPart
+                        ctx.beginPath();
+                        ctx.fillStyle = trackColor;
+                        ctx.moveTo(60,80);
+                        ctx.lineTo(280,190);
+                        ctx.lineTo(280,230);
+                        ctx.lineTo(60,120)
+                        ctx.closePath();
+                        ctx.fill();
+
+                        // Secound part
+                        ctx.beginPath();
+                        ctx.fillStyle = trackColor;
+                        ctx.moveTo(340,170);
+                        ctx.lineTo(340,350);
+                        ctx.lineTo(100,400);
+                        ctx.lineTo(60,400);
+                        ctx.lineTo(60,380);
+                        ctx.lineTo(58,380);
+                        ctx.lineTo(58,440);
+                        ctx.lineTo(380,440);
+                        ctx.lineTo(380,170);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                function drawFigures(){
+                    // Triangles
+                    ctx.beginPath()
+                    ctx.fillStyle="blue";
+                    // Left
+                    ctx.moveTo(100,440);
+                    ctx.lineTo(70,470);
+                    ctx.lineTo(130,470);
+                    ctx.closePath();
+                    // Right
+                    ctx.moveTo(340,440);
+                    ctx.lineTo(310,470);
+                    ctx.lineTo(370,470);
+                    ctx.closePath();
+                    ctx.fill()
+
+                    // Ground
+                    ctx.beginPath();
+                    ctx.fillStyle = "brown";
+                    ctx.moveTo(0,470);
+                    ctx.lineTo(ctx.canvas.width,470);
+                    ctx.lineTo(ctx.canvas.width,475);
+                    ctx.lineTo(0,475);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+
+                function drawBall(){
+                        ctx.beginPath()
+                        ctx.fillStyle = 'red';
+                        ctx.moveTo(x,y);
+                        ctx.arc(x, y, 20, 0, 2 * Math.PI);
+                        ctx.stroke();     
+                        ctx.fill();
+                    }
+
+                function getPath(){
+                    if(path==1){
+                        y+=1;
+                        if(y==67){
+                            path=2;
+                        }
+                    }else if(path==2){
+                        y+=0.5;
+                        x+=1;
+                        if(x==320){
+                        path=3;
+                        }
+                    }else if(path==3){
+                        y+=1;
+                        if(y==334){
+                            path=4;
+                        }
+                    }else if(path==4){
+                        y+=0.21;
+                        x-=1;
+                        if(x==100){
+                            path=5;
+                        }
+                    }else if(path==5){
+                        x-=1;
+                        if(x==80){
+                            path=0;
+                        }
+                    }
+                }
+                
+            
+            </script>
+        </div>
+        <div class="showDocumentation">
+            <button id="docuButton" >
+                Vis dokumentasjon
+            </button>
+            <script>
+                $( "#docuButton" ).click(function(){
+                    $("#documentationContainer").toggle();
+                    $("#documentationHeader").toggle();
+                });
+            </script>
+        </div>
+        <div id="documentationHeader" hidden="true">
+            <h3>
+                Dokumentasjon
+            </h3>
+        </div>
+        <div id="documentationContainer" hidden="true">
+            <p>
+                <h4>
+                    CSS-grid
+                </h4>
+                <p>
+                    2 kolonner og 6 rader. Hver overskrift, innhold og bilde, har fått sin egen rad for å gjøre det lettere å plassere disse på de områdene jeg ville ha dem. Har valgt å ha bildene ved siden av hverandre, og derfor måtte jeg ha to rader.<br/>
+                    Resterende objekter går over begge kolonnene<br/>
+                    Stylingen er gjort i style.css.
+                </p>
+                <h4>
+                    SVG
+                </h4>
+                <p>
+                    Bruker "polygon" for å tegne banen, "circle" for å tegne ballen og "rect" for å tegne bakken banen står på.<br>
+                    Bruker interaksjonen jeg har lagt til er at man starter animasjonen ved å klikke på ballen. Dette gjøres ved hjelp avonClick(). For å gi ballen animasjon, så brukes jQuery med gitt tidsintervall mellom hver del-animasjon.<br/>
+                    I tillegg er det lagt til at man kan endre farge på de forskjellige delene av banen ved å holde musepeker over delene<br/>
+                    Farger er angitt i style.css.
+                </p>
+                <h4>
+                    Canvas
+                </h4>
+                <p>
+                    Bruker "polygon" for alle figurer, utenom ballen, der brukes det arc()<br/>
+                    Brukerinteraksjonen er også her at man kan klikek for å starte animasjonen. Brukes onClick() på selve canvasen, siden man ikke kan velge ut ett spesifikt element fra ett canvas bilde. onClik() utfører startAnimation().
+                    Denne funksjonen initialiserer startverdiene, og bruker setInterval(function, interval) for å tegne ett nytt bilde på gitte interval. 
+                    10 millisekunder ble valgt, siden denne ga den fineste animasjonen. Funksjonen animate() tegner bildet og kaller getPath() som endrer posisjonen til ballen for hver iterasjon<br/>
+                    Fikk ikke til å legge til samme mouseover funksjon som i SVG.<br/>
+                    Siden man ikke kan velge ett spesielt objekt i canvas, er det heller ikke brukt egen css fil for å angi farger o.l.
+                </p>
+                
+                <h4>
+                    jQuery
+                </h4>
+                <p>
+                    jQuery har jeg brukt i animasjon i SVG bildet og for å vise/sjule dokumentasjonen. Det fungerer veldig bra når man vil gjøre noe med ett spesifikt html objekt.<br>
+                    For SVG bildet har jeg brukt funksjonen ".animate()" for å lage animasjonen til ballen. Det fungerte bra, men problemet er at mellom hver animasjon, så blir det ett lite stopp, slik at animasjonen ikke blir "smooth".<br>
+                    For at vise/sjule dokumentasjons knappan skulle kunne bytte synligheten på dokumentasjonsboksen, så brukte jeg ".toggle()" funksjonen.
+                </p>
+                <h4>
+                    Cross browser testing
+                </h4>
+                <p >
+                    Testet med Chrome og Safari på min Mac.<br>
+                    I tillegg fikk jeg en kompis til å teste med Chrome og Mozill Firefox på sin Windows PC. Fungerte der å.
+                </p>
+                <h4>
+                    Informasjonskilder
+                </h4>
+                <p>
+                    <ul>
+                        <li>
+                            https://jquery.com
+                        </li>
+                        <li>
+                            https://css-tricks.com/snippets/css/complete-guide-grid/ 
+                        </li>
+                        <li>
+                            https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+                        </li>
+                        <li>
+                            https://developer.mozilla.org/en-US/docs/Web/SVG?retiredLocale=kab
+                        </li>
+                        <li>w3schools.com
+                            <ul>
+                                <li>
+                                    For det mest grunnleggende innefor css-grid, canvas og SVG 
+                                </li>
+                            </ul>
+                        </li>
+                        <li>stackoverflow.com + andre forum
+                            <ul>
+                                <li>
+                                    For det meste for å skjønne hvordan jQuery fungerer, men også brukt til mye annet
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </p>
+                <h4>
+                    Kodesnutter
+                </h4>
+                <p>
+                    Documentasjonsknapp er hentet fra: <a href="https://getcssscan.com/css-buttons-examples">getcssscan.com</a>, Button 17.
+                </p>
+                
+            </p>
+        </div>
+        <div id="footer">
+            <footer>
+                Made with love
+            </footer>
+        </div>
+    </div>
+    </body>
+</html>
