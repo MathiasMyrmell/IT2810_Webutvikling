@@ -1,0 +1,49 @@
+.Home {
+    background-color: rgb(60, 60, 60);
+    width: 1150px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.Home h1 {
+    color: #F8F8F8;
+    font-size: clamp(24px, 10vw, 50px);
+}
+
+.recipes {
+    width: 700px;
+    position: relative;
+    right: -100px;
+}
+
+.flexMain {
+    width: 1150px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Smaller screens */
+@media (max-width: 1200px) {
+    .Home {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .flexMain {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .recipes {
+        right: 0px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 512px) {
+    .Home {
+        padding: 0;
+    }
+}
