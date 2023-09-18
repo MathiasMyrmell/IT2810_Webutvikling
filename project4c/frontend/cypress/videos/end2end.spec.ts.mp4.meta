@@ -1,0 +1,56 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=3339
+END=4295
+title=End2End_homepage vistit test site
+[CHAPTER]
+TIMEBASE=1/1000
+START=3606
+END=5253
+title=End2End_homepage search for recipes
+[CHAPTER]
+TIMEBASE=1/1000
+START=6733
+END=6902
+title=End2End_homepage click open on first recipe
+[CHAPTER]
+TIMEBASE=1/1000
+START=7011
+END=7072
+title=End2End_homepage check if ingredients contains chicken
+[CHAPTER]
+TIMEBASE=1/1000
+START=6972
+END=7134
+title=End2End_homepage click close on first recipe
+[CHAPTER]
+TIMEBASE=1/1000
+START=6866
+END=7296
+title=End2End_homepage Select on "beef" and check if recipe ingredients contians "beef"
+[CHAPTER]
+TIMEBASE=1/1000
+START=7461
+END=7728
+title=End2End_recipeMaker vistit test site
+[CHAPTER]
+TIMEBASE=1/1000
+START=7734
+END=7996
+title=End2End_recipeMaker Click on "Make Recipes"
+[CHAPTER]
+TIMEBASE=1/1000
+START=8144
+END=8259
+title=End2End_recipeMaker Check for error output
+[CHAPTER]
+TIMEBASE=1/1000
+START=6261
+END=8375
+title=End2End_recipeMaker Add ingredients
+[CHAPTER]
+TIMEBASE=1/1000
+START=10342
+END=10493
+title=End2End_recipeMaker Remove ingredient

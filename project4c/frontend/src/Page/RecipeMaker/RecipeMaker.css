@@ -1,0 +1,61 @@
+.RecipeMaker {
+    background-color: rgb(60, 60, 60);
+    width: 1150px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    padding: 25px;
+}
+
+.RecipeMaker>h1 {
+    color: #F8F8F8;
+    font-size: clamp(24px, 10vw, 50px);
+}
+
+.RecipeMaker>h2 {
+    color: #F8F8F8;
+    font-size: clamp(12px, 5vw, 25px);
+    margin-top: 40px;
+}
+
+.RecipeMaker>h3 {
+    color: #F8F8F8;
+    font-size: clamp(10px, 4vw, 20px);
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+#directionConstraint{
+    color: white;
+    font-weight: bold;
+    font-size: clamp(12px, 5vw, 18px);
+}
+
+
+/* For small screens */
+.response {
+    color: white;
+    font-weight: bold;
+    display: inline;
+    margin-left: 10px;
+    font-size: clamp(12px, 5vw, 18px);
+}
+
+/* Smaller screens */
+@media (max-width: 1200px) {
+    .RecipeMaker {
+        width: 90%;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 512px) {
+    .RecipeMaker {
+        width: 100%;
+        padding: 0;
+    }
+}
