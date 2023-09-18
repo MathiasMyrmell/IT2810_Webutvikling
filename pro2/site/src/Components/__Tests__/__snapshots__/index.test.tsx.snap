@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Home/index 1`] = `
+<div
+  className="Home"
+>
+  <h1>
+    Visualisering/presentasjon av GITLAB data
+  </h1>
+  <div
+    className="StartScreen"
+  >
+    <p>
+      Legg til URL link og token for å visualisere data. Eksempel på url er https://gitlab.stud.idi.ntnu.no/it2810-h22/Team-XX/prosjekt. NB, du må legge inn informasjon i tekstboksene under for å få tilgang til resten av nettsiden.
+    </p>
+    <h3>
+      URL Link:
+    </h3>
+    <input
+      name="link"
+      onChange={[Function]}
+      type="text"
+    />
+    <br />
+    <h3>
+      Token:
+    </h3>
+    <input
+      name="token"
+      onChange={[Function]}
+      type="text"
+    />
+    <br />
+    <p />
+    <button
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+  </div>
+</div>
+`;

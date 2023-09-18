@@ -1,0 +1,35 @@
+.navbar {
+    background-color: rgb(40, 44, 52);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    column-gap: 32px;
+}
+
+.navbar>div>a {
+    color: rgb(137, 227, 252);
+    padding: 16px 0;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-size: clamp(16px, 2vw, 32px);
+}
+
+.navbar>div:hover {
+    background-color: rgb(54, 58, 66);
+}
+
+/* For mobile phones */
+@media (max-width: 512px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar>div>a {
+        width: 100%;
+        padding: 10px 0;
+    }
+}

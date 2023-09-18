@@ -1,0 +1,28 @@
+.Issues {
+    width: 1150px;
+    margin: 0 auto;
+    padding: 25px;
+    word-wrap: break-word;
+}
+
+.Issues>h1 {
+    font-size: clamp(24px, 4vw, 50px);
+}
+
+.Issues>p {
+    font-size: clamp(14px, 1.5vw, 20px);
+}
+
+/* For small screens */
+@media (max-width: 1200px) {
+    .Issues {
+        width: 90%;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 512px) {
+    .Issues {
+        padding: 0;
+    }
+}

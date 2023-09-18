@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test Issues 1`] = `
+<div
+  className="Issues"
+>
+  <h1>
+    Visualisering/presentasjon av GITLAB data
+  </h1>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

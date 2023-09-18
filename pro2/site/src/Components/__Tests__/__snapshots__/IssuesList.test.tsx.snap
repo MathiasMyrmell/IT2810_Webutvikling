@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test IssuesList 1`] = `
+<div
+  className="IssuesList"
+>
+  <table
+    className="openIssues tableIssues"
+  >
+    <tbody>
+      <tr>
+        <th>
+          Open
+        </th>
+      </tr>
+      <tr>
+        <td>
+          No open issues.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="closedIssues tableIssues"
+  >
+    <tbody>
+      <tr>
+        <th>
+          Closed
+        </th>
+      </tr>
+      <tr>
+        <td>
+          No closed issues.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

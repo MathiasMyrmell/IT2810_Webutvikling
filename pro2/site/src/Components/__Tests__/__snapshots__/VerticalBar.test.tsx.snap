@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test VerticalBar 1`] = `
+<div
+  className="VerticalGraph"
+>
+  <canvas
+    height={150}
+    role="img"
+    width={300}
+  />
+</div>
+`;

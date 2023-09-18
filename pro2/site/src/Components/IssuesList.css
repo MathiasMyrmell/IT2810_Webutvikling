@@ -1,0 +1,53 @@
+.IssuesList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tableIssues {
+    flex-grow: 1;
+    height: 100%;
+    width: 512px;
+    margin: 31px;
+}
+
+.tableIssues td,
+.tableIssues th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: clamp(6px, 2vw, 20px);
+}
+
+.tableIssues tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tableIssues tr:hover {
+    background-color: #ddd;
+}
+
+.tableIssues th:hover {
+    background-color: rgb(66, 70, 78);
+}
+
+.tableIssues th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(50, 54, 62);
+    color: rgb(137, 227, 252);
+    font-size: clamp(14px, 1.5vw, 20px);
+}
+
+.tableIssues td {
+    font-size: clamp(14px, 1.5vw, 20px);
+}
+
+/* For small screens */
+@media (max-width: 1200px) {
+
+    .tableIssues {
+        width: 100%;
+        margin: 0px;
+    }
+
+}
